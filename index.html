@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias - Everest Consultores</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a4d2e 0%, #2d6a4f 50%, #1b5e3f 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: gradientShift 15s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            padding: 60px 40px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #1a4d2e, #52b788);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #1a4d2e;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .thank-you-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .message {
+            font-size: 20px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .team-photo {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            background: linear-gradient(135deg, #d8f3dc, #b7e4c7);
+            border-radius: 20px;
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #1a4d2e;
+            border: 3px dashed #2d6a4f;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-photo::before {
+            content: "📸";
+            font-size: 60px;
+            position: absolute;
+            opacity: 0.3;
+        }
+
+        .team-photo-text {
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+        }
+
+        /* Cuando añadas la foto real, sustituye el div por: */
+        /* <img src="tu-foto.jpg" alt="Equipo Everest" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;"> */
+
+        .party-section {
+            background: linear-gradient(135deg, #1a4d2e 0%, #2d6a4f 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .party-section::before {
+            content: "🎉";
+            font-size: 120px;
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            opacity: 0.1;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .party-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .party-text {
+            font-size: 18px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .party-button {
+            display: inline-block;
+            background: white;
+            color: #1a4d2e;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .party-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+            background: #52b788;
+            color: white;
+        }
+
+        .footer {
+            margin-top: 40px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .team-names {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .team-member {
+            background: linear-gradient(135deg, #d8f3dc, #b7e4c7);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            color: #1a4d2e;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .message {
+                font-size: 18px;
+            }
+            
+            .party-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">EVEREST</div>
+        <div class="subtitle">Consultores</div>
+        
+        <div class="thank-you-icon">🙏</div>
+        
+        <h1>¡Muchas Gracias!</h1>
+        
+        <p class="message">
+            Gracias por asistir a nuestra presentación del Plan de Ventas 2025.<br>
+            Ha sido un placer compartir con vosotros nuestra visión y estrategia.
+        </p>
+
+        <div class="team-photo">
+            <div class="team-photo-text">
+                [ Aquí irá la foto del equipo ]<br>
+                <small style="font-size: 14px; opacity: 0.7;">Sustituye este div por tu imagen</small>
+            </div>
+        </div>
+
+        <div class="team-names">
+            <div class="team-member">María Juárez</div>
+            <div class="team-member">Marta Ribas</div>
+            <div class="team-member">Rubén Santos</div>
+            <div class="team-member">Vicente Flor</div>
+            <div class="team-member">Jose Juan Jover</div>
+        </div>
+
+        <div class="party-section">
+            <div class="party-title">🎊 ¡Nos vemos en la fiesta!</div>
+            <div class="party-text">
+                Celebramos juntos nuestros logros la próxima semana.<br>
+                ¡No te lo pierdas!
+            </div>
+            <a href="https://tuenlace.com/fiesta" class="party-button">
+                📅 Más información
+            </a>
+        </div>
+
+        <div class="footer">
+            © 2024 Everest Consultores • Valencia, España
+        </div>
+    </div>
+</body>
+</html>
